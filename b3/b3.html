@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<script>
+    const height = 5;
+
+    for (let i = 1; i <= height; i++) {
+        let row = '';
+        for (let j = 1; j <= i; j++) {
+            row += '*';
+        }
+        document.write(row +'<br>');
+    }
+
+    const height1 = 5;
+    for (let i = height1; i>=1; i--) {
+        let row = '';
+        for (let j = 1; j <= i; j++) {
+            row += '*';
+        }
+        document.write(row +'<br>');
+    }
+
+    const height2 = 5;
+
+    for (let i = 1; i <= height2; i++) {
+        let row = '';
+        // Thêm các khoảng trắng để dịch phải
+        for (let j = 1; j <= height2 - i; j++) {
+            row += '&nbsp;&nbsp;';
+        }
+        // Thêm dấu '*' cho từng dòng
+        for (let j = 1; j <= i; j++) {
+            row += '*' ;
+        }
+        document.write(row +'<br>');
+    }
+    const height3 = 5;
+
+    for (let i = height3; i >=1; i--) {
+        let row = '';
+        for (let j = 1; j <= i; j++) {
+            row += '*';
+        }
+        for (let j = 1; j <= height3 - i; j++) {
+            row = '&nbsp;&nbsp;' + row;
+        }
+        document.write(row +'<br>');
+    }
+</script>
+
+</body>
+</html>

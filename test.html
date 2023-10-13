@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tam giác vuông bằng *</title>
+</head>
+<body>
+
+<pre id="triangle1"></pre>
+<pre id="triangle3"></pre>
+<pre id="triangle2"></pre>
+<pre id="triangle4"></pre>
+
+<script>
+    const rows = 5; // Số dòng của tam giác
+    document.getElementById('triangle1').innerHTML = ve(rows, 'top-left');
+    document.getElementById('triangle2').innerHTML = ve(rows, 'top-right');
+    document.getElementById('triangle3').innerHTML = ve(rows, 'bottom-left');
+    document.getElementById('triangle4').innerHTML = ve(rows, 'bottom-right');
+    function ve(rows, corner) {
+        let trang = '';
+        for (let i = 1; i <= rows; i++) {
+            if (corner === 'top-left') {
+                trang += '*'.repeat(i) + '\n';
+            } else if (corner === 'top-right') {
+                trang += ' '.repeat(rows - i) + '*'.repeat(i) + '\n';
+            } else if (corner === 'bottom-left') {
+                trang += '*'.repeat(rows - i + 1) + '\n';
+            } else if (corner === 'bottom-right') {
+                trang += ' '.repeat(i - 1) + '*'.repeat(rows - i + 1) + '\n';
+            }
+        }
+        return trang;
+    }
+
+
+</script>
+</body>
+</html>
